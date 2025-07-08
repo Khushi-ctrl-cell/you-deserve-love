@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>You Deserve Love</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #ffccdc, #ffe6f0);
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      text-align: center;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      padding: 40px;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.2em;
+      color: #e91e63;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      background-color: #ff69b4;
+      border: none;
+      border-radius: 30px;
+      padding: 12px 25px;
+      color: white;
+      font-size: 16px;
+      margin: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #e91e63;
+    }
+
+    .message {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #444;
+      background-color: #ffe6f0;
+      border-left: 4px solid #ff69b4;
+      padding: 12px;
+      border-radius: 10px;
+      display: none;
+    }
+
+    .gif-container {
+      margin-top: 20px;
+      display: none;
+    }
+
+    .gif-container img {
+      width: 200px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hey, Lovely!</h1>
+    <button class="btn" onclick="checkMood()">How are you?</button>
+    <div id="response" class="message"></div>
+    <div id="gif" class="gif-container">
+      <img src="https://media.giphy.com/media/Z21HJj2kz9uBG/giphy.gif" alt="I love you GIF">
+    </div>
+  </div>
+
+  <script>
+    function checkMood() {
+      const isOkay = confirm("Are you okay?");
+      const messageDiv = document.getElementById("response");
+      const gifDiv = document.getElementById("gif");
+
+      if (isOkay) {
+        messageDiv.innerHTML = "I'm so glad you're doing okay! 💖<br>Remember, you deserve to be loved.";
+      } else {
+        messageDiv.innerHTML = "It's okay to not be okay. Please take your medicine and drink some water. 💧<br>Remember, you deserve to be loved.";
+      }
+
+      messageDiv.style.display = "block";
+      gifDiv.style.display = "block";
+    }
+  </script>
+</body>
+</html>
